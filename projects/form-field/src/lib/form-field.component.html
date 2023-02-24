@@ -1,0 +1,11 @@
+<div
+  [ngClass]="{ 'outline-error': control.invalid && control.touched }"
+  (focusout)="checkErrors()"
+>
+  <span *ngIf="title" [ngClass]="{ error: control.invalid && control.touched }">
+    {{ title }}
+    <ng-container *ngIf="control.validator">*</ng-container>
+  </span>
+  <input type="text" [formControl]="control" [placeholder]="placeholder" />
+</div>
+<p>{{ messageControl }}</p>
